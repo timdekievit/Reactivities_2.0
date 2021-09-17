@@ -35,6 +35,11 @@ namespace API.Extensions
                         ValidateAudience = false
                     };
                 });
+
+            services.AddAuthorization(opt => 
+            {
+                opt.AddPolicy("IsActivity")
+            })
             services.AddScoped<TokenService>();
 
             return services;
